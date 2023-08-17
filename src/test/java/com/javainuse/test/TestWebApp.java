@@ -28,7 +28,7 @@ public class TestWebApp extends SpringBootHelloWorldTests {
 	@Test
 	public void testEmployee() throws Exception {
 		mockMvc.perform(get("/employee")).andExpect(status().isOk())
-				.andExpect(content().contentType("application/json;charset=UTF-8"))
+				.andExpect(content().contentType("application/json"))
 				.andExpect(jsonPath("$.name").value("emp1")).andExpect(jsonPath("$.designation").value("manager"))
 				.andExpect(jsonPath("$.empId").value("1")).andExpect(jsonPath("$.salary").value(3000));
 
