@@ -1,0 +1,35 @@
+pipeline{
+agent any
+tools{
+maven "MAVEN"
+}
+stages{
+     stage('Build'){
+          steps{
+                echo "Project building successfully...."
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ashok-korke/SpringBootHelloWorld_JUnit.git']])
+                bat "mvn -Dmaven.test.failure.ignore=true clean package"
+              }
+              
+    }
+    stage('deploy'){
+      steps{
+              echo "Project Deployed successfully....."
+             
+           }
+    }
+    stage('Test'){
+     steps{
+           echo "Project Tested successfully......"
+         }
+    }
+    stage('Release'){
+      steps{
+             echo "Project released successfully....."
+           }
+    }
+    
+}
+
+}
+
