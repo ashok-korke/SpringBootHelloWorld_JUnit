@@ -30,7 +30,7 @@ stages{
     stage('Test'){
      steps{
            echo "Project Tested successfully......"
-           bat "mvn test"
+           bat "mvn clean test"
          }
     }
     stage('Release'){
