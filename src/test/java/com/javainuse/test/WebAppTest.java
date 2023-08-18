@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-public class TestWebApp extends SpringBootHelloWorldTests {
+public class WebAppTest extends SpringBootHelloWorldTest {
 
 	@Autowired
 	private WebApplicationContext webApplicationContext;
