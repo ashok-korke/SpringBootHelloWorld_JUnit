@@ -14,7 +14,10 @@ stages{
     }
     stage('SonarQube Analysis') {
          steps{
-              mvn clean verify sonar:sonar -Dsonar.projectKey=sonar-demo -Dsonar.login=sqp_172aaebf06095d505ceb9d1d63e83be00c48d3ad
+            bat "mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=sonar-demo \
+  -Dsonar.host.url=http://localhost:9099 \
+  -Dsonar.login=sqp_172aaebf06095d505ceb9d1d63e83be00c48d3ad"
              }
    }
     stage('deploy'){
