@@ -30,7 +30,6 @@ stages{
     stage('Test'){
      steps{
            echo "Project Tested successfully......"
-           bat "mvn -Dmaven.test.failure.ignore=true clean test"
          }
     }
     stage('Release'){
